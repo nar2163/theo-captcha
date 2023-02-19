@@ -88,10 +88,7 @@ function LoginPage() {
               >
                 Not a member? No worries...
               </Typography>
-              <Typography
-                component="h1"
-                style={{ marginTop: '1rem' }}
-              >
+              <Typography component="h1" style={{ marginTop: '1rem' }}>
                 Just fill out the form, sign in <br></br> and we'll take care of
                 the rest.
               </Typography>

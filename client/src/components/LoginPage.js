@@ -102,6 +102,11 @@ function LoginPage() {
               </Button>
               <Grid container>
                 {/**
+                 * 
+                 * 
+                 * 
+                 * DO AN ENTER DELAY to track how long users mouse was in box for captcha 
+                 * if barely a delay than queue the second visual captcha
                 <Grid item>
                   <Link href="#" variant="body2" onClick={handleSignUp}>
                     {"Don't have an account? Sign Up"}

@@ -58,7 +58,7 @@ router.get('/verifyCheckboxCaptcha/:mouseHoverDuration', (req, res) => {
   const MIN_REQ_HOVER_TIME = 2
   const str = [
     {
-      isRobot: userMouseDuration > MIN_REQ_HOVER_TIME ? false : true,
+      isRobot: userMouseDuration >= MIN_REQ_HOVER_TIME ? false : true,
     },
   ]
 

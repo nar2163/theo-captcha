@@ -8,6 +8,7 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Captcha from './Captcha'
 
 const theme = createTheme()
 
@@ -92,6 +93,7 @@ function LoginPage() {
                 Just fill out the form, sign in <br></br> and we'll take care of
                 the rest.
               </Typography>
+              <Captcha />
               <p sx={{ fontSize: '10rem' }}></p>
               <Button
                 type="submit"

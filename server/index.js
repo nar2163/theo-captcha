@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('bodyParser')
 
 const app = express()
-app.use(bodyParser.urlencoded({ encoded: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const PORT = 4000

@@ -1,11 +1,8 @@
 //template for login page taken from https://github.com/mui/material-ui/blob/v5.11.9/docs/data/material/getting-started/templates/sign-in-side/SignInSide.js
-import * as React from 'react'
+
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import Link from '@mui/material/Link'
 import Paper from '@mui/material/Paper'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -15,8 +12,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 const theme = createTheme()
 
 function LoginPage() {
-  const [isNewUser, setIsNewUser] = React.useState(false)
-
   const handleSubmit = (event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -58,7 +53,7 @@ function LoginPage() {
             }}
           >
             <Typography component="h1" variant="h5">
-              Sign in to vote on Theo's Pics
+              Theo's Pics
             </Typography>
             <Box
               component="form"
@@ -86,9 +81,19 @@ function LoginPage() {
                 id="password"
                 autoComplete="current-password"
               />
-              <Typography component="h1" variant="h6" style={{marginTop: '1rem'}}>
-                Not a member? <br></br> No worries, just sign in and we'll
-                create a new account for you.
+              <Typography
+                component="h2"
+                variant="h6"
+                style={{ marginTop: '1rem' }}
+              >
+                Not a member? No worries...
+              </Typography>
+              <Typography
+                component="h1"
+                style={{ marginTop: '1rem' }}
+              >
+                Just fill out the form, sign in <br></br> and we'll take care of
+                the rest.
               </Typography>
               <p sx={{ fontSize: '10rem' }}></p>
               <Button

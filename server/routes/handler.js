@@ -41,6 +41,15 @@ const rawCaptchaImageData = {
   },
 }
 
+const theoPhotos = [
+  {
+    img: 'https://i.ibb.co/y4NqYbH/IMG-4019-2.jpg',
+    title: 'theo-1',
+  },
+  { img: 'https://i.ibb.co/3NMdBky/IMG-1546.jpg', title: 'theo-2' },
+  { img: 'https://i.ibb.co/ZT01v1c/IMG-1926.jpg', title: 'theo-3' },
+]
+
 router.get('/captchaImage', (req, res) => {
   const currIndex = Math.floor(Math.random() * 5) + 1
   const currCaptchaData = rawCaptchaImageData[currIndex]
@@ -86,6 +95,14 @@ router.get('/verifyPictureCaptcha/:answer/:index', (req, res) => {
   ]
 
   console.log(JSON.stringify(str))
+
+  res.end(JSON.stringify(str))
+})
+
+router.get('/home', (req, res) => {
+  const str = {
+    privatePhotos: [...theoPhotos],
+  }
 
   res.end(JSON.stringify(str))
 })

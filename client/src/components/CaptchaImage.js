@@ -37,7 +37,7 @@ export default function CaptchaImage() {
     if (answerResult[0].isCorrectAnswer) {
       navigate('/home')
     } else {
-      navigate('/captchaImage')
+      navigate('/')
     }
   }
   console.log(captchaImageData)

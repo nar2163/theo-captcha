@@ -40,9 +40,7 @@ router.get('/captchaImage', (req, res) => {
   const currIndex = Math.floor(Math.random() * 5) + 1
   const currCaptchaData = rawCaptchaImageData[currIndex]
 
-  console.log(currCaptchaData)
-
-  const captchaDataStr = [
+  const str = [
     {
       imageUrl: currCaptchaData.imageUrl,
       question: currCaptchaData.question,
@@ -50,7 +48,9 @@ router.get('/captchaImage', (req, res) => {
     },
   ]
 
-  res.end(JSON.stringify(captchaDataStr))
+  console.log(JSON.stringify(str))
+
+  res.end(JSON.stringify(str))
 })
 
-module.exports = router;
+module.exports = router

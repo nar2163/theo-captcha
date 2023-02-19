@@ -1,8 +1,17 @@
 import * as React from 'react'
 import useMouse from '@react-hook/mouse-position'
 import { Box, Checkbox, FormControlLabel, FormGroup } from '@mui/material'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogTitle from '@mui/material/DialogTitle'
 
 function Captcha({ type = 'checkbox' }) {
+  const MIN_REQ_HOVER_TIME = 3
+  const [checkboxValue, setCheckboxValue] = React.useState(false)
+  const [modalOpen, setModalOpen] = React.useState(false)
   const [hoverTimeElapsed, setHoverTimeElapsed] = React.useState(0)
   const ref = React.useRef(null)
   const hoveringMouse = useMouse(ref, { isOver: false })
@@ -23,7 +32,45 @@ function Captcha({ type = 'checkbox' }) {
   // seconds the secondary captcha triggers
   console.log(hoverTimeElapsed)
 
-  return (
+  const handleCheckboxChange = (event) => {
+    setCheckboxValue(event.target.checked)
+    if (hoverTimeElapsed < MIN_REQ_HOVER_TIME) {
+      setModalOpen(true)
+    }
+  }
+
+  const handleClose = () => {
+    setModalOpen(false)
+  }
+
+  const modalWindow = (
+    <Dialog
+      open={modalOpen}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">
+        {"Use Google's location service?"}
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose}>Disagree</Button>
+        <Button onClick={handleClose} autoFocus>
+          Agree
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+
+  return modalOpen ? (
+    modalWindow
+  ) : (
     <Box
       ref={ref}
       sx={{
@@ -39,8 +86,8 @@ function Captcha({ type = 'checkbox' }) {
         <FormControlLabel
           control={
             <Checkbox
-              defaultChecked
               sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+              onChange={handleCheckboxChange}
             />
           }
           label={`I am not a robot`}

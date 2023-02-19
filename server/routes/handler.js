@@ -5,20 +5,23 @@ const rawCaptchaImageData = {
   1: {
     imageUrl: 'https://i.ibb.co/Y451Wtv/gettyimages-979081604-612x612.jpg',
     question: 'how many good boys are in this photo?',
-    count: 2,
+    answer: 2,
     type: 'pic',
+    answers: [1, 2, 3],
   },
   2: {
     imageUrl: 'https://i.ibb.co/W3PNnfy/bulldog-cat-kiss.webp',
     question: 'how many good boys are in this photo?',
-    count: 2,
+    answer: 2,
     type: 'pic',
+    answers: [1, 2, 3],
   },
   3: {
     imageUrl: 'https://i.ibb.co/q0tv2q2/3-puppies-on-chair.jpg',
     question: 'how many good boys are in this photo?',
-    count: 3,
+    answer: 3,
     type: 'pic',
+    answers: [1, 2, 3],
   },
   4: {
     imageUrl:
@@ -26,6 +29,7 @@ const rawCaptchaImageData = {
     question: 'Are these people talking or scuba diving?',
     answer: 'talking',
     type: 'question',
+    answers: ['talking', 'scuba diving'],
   },
   5: {
     imageUrl:
@@ -33,6 +37,7 @@ const rawCaptchaImageData = {
     question: 'Is this person swimming or drowning?',
     answer: 'swimming',
     type: 'question',
+    answers: ['swimming', 'drowning'],
   },
 }
 
@@ -44,6 +49,7 @@ router.get('/captchaImage', (req, res) => {
     {
       imageUrl: currCaptchaData.imageUrl,
       question: currCaptchaData.question,
+      answers: currCaptchaData.answers,
       index: currIndex,
     },
   ]
@@ -67,4 +73,20 @@ router.get('/verifyCheckboxCaptcha/:mouseHoverDuration', (req, res) => {
   res.end(JSON.stringify(str))
 })
 
+router.get('/verifyPictureCaptcha/:answer/:index', (req, res) => {
+  const answer = req.params.answer
+  const questionIndex = req.params.index
+
+  const correctAnswer = rawCaptchaImageData[questionIndex].answer
+
+  const str = [
+    {
+      isCorrectAnswer: answer == correctAnswer,
+    },
+  ]
+
+  console.log(JSON.stringify(str))
+
+  res.end(JSON.stringify(str))
+})
 module.exports = router

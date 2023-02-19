@@ -53,4 +53,18 @@ router.get('/captchaImage', (req, res) => {
   res.end(JSON.stringify(str))
 })
 
+router.get('/verifyCheckboxCaptcha/:mouseHoverDuration', (req, res) => {
+  const userMouseDuration = req.params.mouseHoverDuration
+  const MIN_REQ_HOVER_TIME = 2
+  const str = [
+    {
+      isRobot: userMouseDuration > MIN_REQ_HOVER_TIME ? false : true,
+    },
+  ]
+
+  console.log(JSON.stringify(str))
+
+  res.end(JSON.stringify(str))
+})
+
 module.exports = router

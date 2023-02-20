@@ -25,13 +25,11 @@ This will launch the development server and the front end server running concurr
 
 ## What are CAPTCHAs and why are they important?
 
-CAPTCHAs _(or Completely Automated Public Turing tests to tell Computers and Humans Apart)_ are automated tests used to verify the identity of a user during online communications. They provide a layer of security to protect from bots or other malicious actors trying to gain access to a website or online service. CAPTCHAs also help to reduce spam and automated access to websites, making them an essential part of any secure web development environment.
+CAPTCHAs are automated tests used to verify the identity of a user, provide a layer of security to protect from bots trying to gain access to a website. Google CAPTCHAs are made secure by using algorithms that make it difficult for bots to interpret and solve them. Some good examples of CAPTCHA tests include using distorted images, matching a set of words or phrases, but CAPTCHAs can even be interactive games, or solving a simple math problem.
 
-Google CAPTCHAs are made secure by using advanced algorithms that make it difficult for automated bots to interpret and complete them. Some good examples of CAPTCHA tests include using distorted images, matching a set of words or phrases, using interactive games, a simple math problem, tracking mouse movement, audio CAPTCHAs and even 3D images.
+The key to a secured CAPTCHA is on the backend. Google's API for CAPTCHA generates a score to identify a user by looking at a number of different factors. First, it exams how users interact with the CAPTCHA, such as how long it takes for them to complete it, or whether they have made any mistakes. It also looks at their cookie and IP address in order to compare them against a database of known bots. Based on a heuristic interpretation of that information, the API assigns a score that determines whether or not the user is human.
 
-The key to a secured CAPTCHA is on the backend. Google's API for CAPTCHA generates a score to identify a user by looking at a number of different factors. First, it exams how users interact with the CAPTCHA, such as how long it takes for them to complete it, or whether they have made any mistakes. It also looks at their cookie and IP address in order to compare them against a database of known bots and malicious users. Based on all this information, it assigns a score that determines if the user is a human or a bot.
-
-## Vulnerability to browser automation tools like Selenium 
+## Vulnerability to browser automation tools like Selenium
 
 Open source software tools like Selenium use automated testing to perform CAPTCHA solving. These tools enable the user to automate interactions with the webpage and break the CAPTCHA image into small parts that can be analyzed and solved using algorithms. It can also employ Optical Character Recognition (OCR) to identify the challenge text and then make an educated guess as to its meaning. Other ways of combating this beyond the CAPTCHA include IP whitelisting and two-factor identification.
 

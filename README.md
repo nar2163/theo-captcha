@@ -25,7 +25,7 @@ This will launch the development server and the front end server running concurr
 
 ## What are CAPTCHAs and why are they important?
 
-CAPTCHAs _(or Completely Automated Public Turing tests to tell Computers and Humans Apart)_ are automated tests used to verify the identity of a user during online communications. They provide a layer of security to protect from bots or other malicious actors trying to gain unwanted access to a website or online service. CAPTCHAs also help to reduce spam and automated access to websites, making them an essential part of any secure web development environment.
+CAPTCHAs _(or Completely Automated Public Turing tests to tell Computers and Humans Apart)_ are automated tests used to verify the identity of a user during online communications. They provide a layer of security to protect from bots or other malicious actors trying to gain access to a website or online service. CAPTCHAs also help to reduce spam and automated access to websites, making them an essential part of any secure web development environment.
 
 Google CAPTCHAs are made secure by using advanced algorithms that make it difficult for automated bots to interpret and complete them. Some good examples of CAPTCHA tests include using distorted images, matching a set of words or phrases, using interactive games, a simple math problem, tracking mouse movement, audio CAPTCHAs and even 3D images.
 
@@ -33,7 +33,7 @@ The key to a secured CAPTCHA is on the backend. Google's API for CAPTCHA generat
 
 ## How they work and how to use them:
 
-- Mouse movement: the system collects your mouse movements (speed and direction) which gets used in the verification, generally a bot has fast, direct and linear mouse movement while a human is slower, more jittery and less accurate.
+- Mouse movement: the system collects your mouse movements (speed and direction) which gets used in the verification, generally a bot has fast, direct and linear mouse movement while a human is slower, and less accurate.
 
 - Other text and test based CAPTCHAs work on the backend by establishing a set of criteria that a user must meet in order to gain access. After a user completes the challenge, on the backend, an algorithm verifies the CAPTCHA response and validates the user’s identity.
 

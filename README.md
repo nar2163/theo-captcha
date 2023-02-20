@@ -1,4 +1,4 @@
-# THEO-CAPTCHA README and CAPTCHA tech doc
+# Theo CAPTCHA ReadMe & CAPTCHA Tech Doc
 
 Included in this document are instructions how to install and run the application as well as a general tech document on CAPTCHA.
 
@@ -11,21 +11,11 @@ In order to run this program, you will need to have the following tools pre-inst
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository: `git clone https://github.com/username/repositoryname.git`
+2. Navigate to the project directory: `cd theo-captcha`
+3. Install the required dependencies: `npm install`
 
-`git clone https://github.com/username/repositoryname.git`
-
-2. Navigate to the project directory:
-
-`cd theo-captcha`
-
-3. Install the required dependencies:
-
-`npm install`
-
-This will install the dependencies listed in the `package.json` files.
-
-## Running the Application in dev
+## Running the Application in a Dev environment
 
 Once the dependencies have been installed, you can run the application with the following command:
 

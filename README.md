@@ -31,6 +31,10 @@ Google CAPTCHAs are made secure by using advanced algorithms that make it diffic
 
 The key to a secured CAPTCHA is on the backend. Google's API for CAPTCHA generates a score to identify a user by looking at a number of different factors. First, it exams how users interact with the CAPTCHA, such as how long it takes for them to complete it, or whether they have made any mistakes. It also looks at their cookie and IP address in order to compare them against a database of known bots and malicious users. Based on all this information, it assigns a score that determines if the user is a human or a bot.
 
+## Vulnerability to browser automation tools like Selenium 
+
+Open source software tools like Selenium use automated testing to perform CAPTCHA solving. These tools enable the user to automate interactions with the webpage and break the CAPTCHA image into small parts that can be analyzed and solved using algorithms. It can also employ Optical Character Recognition (OCR) to identify the challenge text and then make an educated guess as to its meaning. Other ways of combating this beyond the CAPTCHA include IP whitelisting and two-factor identification.
+
 ## How they work and how to use them:
 
 - Mouse movement: the system collects your mouse movements (speed and direction) which gets used in the verification, generally a bot has fast, direct and linear mouse movement while a human is slower, and less accurate.

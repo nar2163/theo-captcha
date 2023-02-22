@@ -3,9 +3,6 @@
 This is a Node.js/React fullstack application that demonstrates the basic implementation of various CAPTCHAs with an accompanying technical document outlining these implementations as well as the importance of securing your authorizations with CAPTCHA technology.
 
 Link to basic video walkthru: [Theo CAPTCHA Walkthru](https://youtu.be/H_ztvF3SoDk)
-
-Included in this document are instructions how to install and run the application as well as a general tech document on CAPTCHA.
-
 ## Prerequisites
 
 In order to run this program, you will need to have the following tools pre-installed on your system:

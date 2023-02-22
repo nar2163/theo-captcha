@@ -1,6 +1,6 @@
 # Theo CAPTCHA ReadMe & CAPTCHA Tech Doc
 
-This is a Node.js/React basic fullstack application that demonstrates the basic implementation of various CAPTCHAs with an accompanying technical document outlining these implementations as well as the importance of securing your authorizations with CAPTCHA technology.
+This is a Node.js/React fullstack application that demonstrates the basic implementation of various CAPTCHAs with an accompanying technical document outlining these implementations as well as the importance of securing your authorizations with CAPTCHA technology.
 
 Link to basic video walkthru: [Theo CAPTCHA Walkthru](https://youtu.be/H_ztvF3SoDk)
 
